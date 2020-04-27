@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.smart.rdate.mapper.UseTrptmVinMapper">
+  <resultMap id="BaseResultMap" type="com.smart.rdate.entity.UseTrptmVin">
+    <id column="id" jdbcType="INTEGER" property="id" />
+    <result column="veh_series" jdbcType="VARCHAR" property="vehSeries" />
+    <result column="vin" jdbcType="VARCHAR" property="vin" />
+    <result column="wk_value" jdbcType="VARCHAR" property="wkValue" />
+    <result column="hr" jdbcType="VARCHAR" property="hr" />
+    <result column="value" jdbcType="VARCHAR" property="value" />
+    <result column="avgtrptime_min" jdbcType="VARCHAR" property="avgtrptimeMin" />
+    <result column="avgtrpodo_km" jdbcType="VARCHAR" property="avgtrpodoKm" />
+    <result column="avg_maxvhlspd_km_h" jdbcType="VARCHAR" property="avgMaxvhlspdKmH" />
+    <result column="road" jdbcType="VARCHAR" property="road" />
+  </resultMap>
+  <select id="getUseBeamVin" resultMap="BaseResultMap">
+    select * from use_trptm_vin where vin = #{vin} and veh_series = #{vehSeries}
+  </select>
+</mapper>

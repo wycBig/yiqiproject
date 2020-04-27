@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.smart.rdate.mapper.GpsHeatAllMapper" >
+  <resultMap id="BaseResultMap" type="com.smart.rdate.entity.GpsHeatAll" >
+    <id column="id" property="id" jdbcType="INTEGER" />
+    <result column="veh_series" property="vehSeries" jdbcType="VARCHAR" />
+    <result column="lng" property="lng" jdbcType="VARCHAR" />
+    <result column="lat" property="lat" jdbcType="VARCHAR" />
+    <result column="cnt" property="cnt" jdbcType="VARCHAR" />
+  </resultMap>
+  <select id="getGpsHeatAll" resultMap="BaseResultMap">
+    select * from gps_heat_all where veh_series = #{vehSeries}
+  </select>
+</mapper>

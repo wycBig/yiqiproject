@@ -1,0 +1,18 @@
+ server:
+    port: 8080
+ # DATASOURCE
+ spring:
+    datasource:
+       name: MySQL
+       url: jdbc:mysql://127.0.0.1:3306/drvhabs?serverTimezone=GMT%2B8&useSSL=FALSE&zeroDateTimeBehavior=convertToNull
+       username: root
+       password: root
+
+# MyBatis
+ mybatis:
+   type-aliases-package: com.smart.rdate.entity
+   mapperLocations: classpath:/mappers/*.xml
+ zuul:
+   #需要忽略的头部信息，不在传播到其他服务
+   sensitive-headers: Access-Control-Allow-Origin
+   ignored-headers: Access-Control-Allow-Origin,H-APP-Id,Token,APPToken

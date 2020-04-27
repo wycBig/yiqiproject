@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.smart.rdate.mapper.UseAccVinWkMapper" >
+  <resultMap id="BaseResultMap" type="com.smart.rdate.entity.UseAccVinWk" >
+    <id column="id" property="id" jdbcType="INTEGER" />
+    <result column="veh_series" property="vehSeries" jdbcType="VARCHAR" />
+    <result column="vin" property="vin" jdbcType="VARCHAR" />
+    <result column="mth_wk" property="mthWk" jdbcType="VARCHAR" />
+    <result column="acc" property="acc" jdbcType="VARCHAR" />
+    <result column="value" property="value" jdbcType="VARCHAR" />
+  </resultMap>
+  <select id="getUseAccVinWk" resultMap="BaseResultMap">
+    select * from use_acc_vin_wk  where veh_series = #{vehSeries}   and vin = #{vin} and `mth_wk` = #{time}
+  </select>
+</mapper>

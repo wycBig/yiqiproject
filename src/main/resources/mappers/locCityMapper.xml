@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.smart.rdate.mapper.locCityMapper" >
+  <resultMap id="BaseResultMap" type="com.smart.rdate.entity.locCity" >
+    <id column="id" property="id" jdbcType="INTEGER" />
+    <result column="veh_series" property="vehSeries" jdbcType="VARCHAR" />
+    <result column="vin" property="vin" jdbcType="VARCHAR" />
+    <result column="day" property="day" jdbcType="DATE" />
+    <result column="mth_week" property="mthWeek" jdbcType="VARCHAR" />
+    <result column="city" property="city" jdbcType="VARCHAR" />
+    <result column="odo_wkm" property="odoWkm" jdbcType="VARCHAR" />
+    <result column="avg_VhlSpd_km_h" property="avgVhlspdKmH" jdbcType="VARCHAR" />
+  </resultMap>
+  <select id="getLocCityData" resultMap="BaseResultMap">
+    select * from loc_city where 1=1
+    <if test="vehSeries != null and vehSeries != ''" >
+      and veh_series = #{vehSeries}
+    </if>
+    <if test="vin != null and vin != ''" >
+      and vin = #{vin}
+    </if>
+    <if test="day != null and day != ''" >
+      and `day` = #{day}
+    </if>
+    <if test="week != null and week != ''" >
+      and mth_week = #{week}
+    </if>
+  </select>
+
+</mapper>

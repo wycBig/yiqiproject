@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.smart.rdate.mapper.VinAndVehMapper" >
+  <resultMap id="BaseResultMap" type="com.smart.rdate.entity.VinAndVeh" >
+    <id column="id" property="id" jdbcType="INTEGER" />
+    <result column="veh_series" property="vehSeries" jdbcType="VARCHAR" />
+    <result column="vin" property="vin" jdbcType="VARCHAR" />
+  </resultMap>
+  <select id="getAll" resultMap="BaseResultMap">
+    select * from vin_and_veh  where veh_series = #{vehSeries} limit 20
+  </select>
+  <select id="getLikeVin" resultMap="BaseResultMap"  >
+    select  * from vin_and_veh  where veh_series = #{vehSeries} and vin like "%"#{vin}"%" limit 20
+  </select>
+</mapper>

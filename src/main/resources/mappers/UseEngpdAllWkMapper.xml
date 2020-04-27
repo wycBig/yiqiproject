@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.smart.rdate.mapper.UseEngpdAllWkMapper" >
+  <resultMap id="BaseResultMap" type="com.smart.rdate.entity.UseEngpdAllWk" >
+    <id column="id" property="id" jdbcType="INTEGER" />
+    <result column="veh_series" property="vehSeries" jdbcType="VARCHAR" />
+    <result column="mth_wk" property="mthWk" jdbcType="VARCHAR" />
+    <result column="agr_engSpd" property="agrEngspd" jdbcType="VARCHAR" />
+    <result column="cnt" property="cnt" jdbcType="VARCHAR" />
+    <result column="avgvhlspd_km_h" property="avgvhlspdKmH" jdbcType="VARCHAR" />
+    <result column="idling" property="idling" jdbcType="VARCHAR" />
+  </resultMap>
+  <select id="getUseEngspdAllWk"  resultMap="BaseResultMap">
+    select *from use_engspd_all_wk where veh_series = #{vehSeries} and mth_wk = #{time}
+  </select>
+</mapper>

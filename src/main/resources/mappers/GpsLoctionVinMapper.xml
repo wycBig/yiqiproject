@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.smart.rdate.mapper.GpsLoctionVinMapper" >
+  <resultMap id="BaseResultMap" type="com.smart.rdate.entity.GpsLoctionVin" >
+    <id column="id" property="id" jdbcType="INTEGER" />
+    <result column="veh_series" property="vehSeries" jdbcType="VARCHAR" />
+    <result column="vin" property="vin" jdbcType="VARCHAR" />
+    <result column="lng" property="lng" jdbcType="VARCHAR" />
+    <result column="lat" property="lat" jdbcType="VARCHAR" />
+    <result column="wk_value" property="wkValue" jdbcType="VARCHAR" />
+  </resultMap>
+  <select id="getVin" resultMap="BaseResultMap">
+    select * from gps_location_vin  where  veh_series= #{str}  and vin =#{vin}
+  </select>
+</mapper>

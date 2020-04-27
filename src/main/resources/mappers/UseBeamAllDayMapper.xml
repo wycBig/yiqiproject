@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.smart.rdate.mapper.UseBeamAllDayMapper" >
+  <resultMap id="BaseResultMap" type="com.smart.rdate.entity.UseBeamAllDay" >
+    <id column="id" property="id" jdbcType="INTEGER" />
+    <result column="veh_series" property="vehSeries" jdbcType="VARCHAR" />
+    <result column="day" property="day" jdbcType="VARCHAR" />
+    <result column="hibeam" property="hibeam" jdbcType="VARCHAR" />
+    <result column="lowbeam" property="lowbeam" jdbcType="VARCHAR" />
+    <result column="top" property="top" jdbcType="VARCHAR" />
+    <result column="road" property="road" jdbcType="VARCHAR" />
+  </resultMap>
+  <select id="getUseBeamAllDay" resultMap="BaseResultMap">
+    select *from use_beam_all_day where veh_series = #{vehSeries} and `day` = #{time}
+  </select>
+
+</mapper>

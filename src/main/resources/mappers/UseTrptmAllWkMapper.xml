@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.smart.rdate.mapper.UseTrptmAllWkMapper" >
+  <resultMap id="BaseResultMap" type="com.smart.rdate.entity.UseTrptmAllWk" >
+    <id column="id" property="id" jdbcType="INTEGER" />
+    <result column="veh_series" property="vehSeries" jdbcType="VARCHAR" />
+    <result column="mth_wk" property="mthWk" jdbcType="VARCHAR" />
+    <result column="wk_value" property="wkValue" jdbcType="VARCHAR" />
+    <result column="hr" property="hr" jdbcType="VARCHAR" />
+    <result column="value" property="value" jdbcType="VARCHAR" />
+    <result column="avgtrptime_min" property="avgtrptimeMin" jdbcType="VARCHAR" />
+    <result column="avgtrpodo_km" property="avgtrpodoKm" jdbcType="VARCHAR" />
+    <result column="avg_maxvhlspd_km_h" property="avgMaxvhlspdKmH" jdbcType="VARCHAR" />
+    <result column="road" property="road" jdbcType="VARCHAR" />
+  </resultMap>
+  <select id="getUseBeamAllWk" resultMap="BaseResultMap">
+    select  * from use_trptm_all_wk where veh_series =#{vehSeries} and mth_wk =#{time}
+  </select>
+</mapper>

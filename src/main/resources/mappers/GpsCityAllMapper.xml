@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.smart.rdate.mapper.GpsCityAllMapper" >
+  <resultMap id="BaseResultMap" type="com.smart.rdate.entity.GpsCityAll" >
+    <id column="id" property="id" jdbcType="INTEGER" />
+    <result column="veh_series" property="vehSeries" jdbcType="VARCHAR" />
+    <result column="city" property="city" jdbcType="VARCHAR" />
+    <result column="odo_wkm" property="odoWkm" jdbcType="VARCHAR" />
+    <result column="avg_vhlspd_km_h" property="avgVhlspdKmH" jdbcType="VARCHAR" />
+  </resultMap>
+
+  <select id="getGpsCityAll"  resultMap="BaseResultMap">
+    select * from gps_city_all where veh_series = #{vehSeries}
+  </select>
+</mapper>
